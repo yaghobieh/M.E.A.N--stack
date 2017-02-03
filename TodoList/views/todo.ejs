@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Todo list app</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/style.css">
+    <script src="/assets/todo-list.js"></script>
+</head>
+
+<body>
+
+    <div id="todo-table">
+        <form method="POST">
+            <input type="text" name="item" placeholder="Add new item..." required>
+            <button type="submit">ADD</button>
+        </form>
+        <br>
+        <ul>
+            <% for(var i=0; i < todos.length; i++) { %>
+                <!---Not make any spaces in LI---->
+                <li><%=todos[i].item%></li>
+                <% } %>
+        </ul>
+    </div>
+</body>
+
+</html>

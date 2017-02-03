@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Library city</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet/less" href="assets/index.less" type="text/css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.1/less.min.js"></script>
+
+  </head>
+  <body ng-app="appMain" ng-controller="indexCtrl">
+
+    <div class="top_logo">
+      <div class="library-logo-title">
+        Library city
+      </div>
+      <div class="links-top-menu">
+        <button type="button" class="btn btn-success">Home</button>
+        <button type="button" class="btn btn-success">Add new book</button>
+        <button type="button" class="btn btn-success">delete book</button>
+        <form class="navbar-form" role="search">
+          <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search" name="q" ng-model="search_for_book">
+              <div class="input-group-btn">
+                  <button class="btn btn-success" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+              </div>
+          </div>
+        </form>
+      </div>
+      <!-- <div class="display-addNewBook">
+        <form class="form-inline" ng-submit="newBook()">
+          <label class="sr-only" for="inlineFormInput">Published year</label>
+          <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="Published year" ng-model="newbook.year">
+
+          <label class="sr-only" for="inlineFormInputGroup">Book name</label>
+          <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+            <div class="input-group-addon"><span class="glyphicon glyphicon-book"></span></div>
+            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Book name" ng-model="newbook.name">
+          </div>
+          <button type="submit" class="btn btn-primary">Add new book</button>
+        </form>
+      </div> -->
+      <div add-new-book></div>
+    </div>
+
+    <div class="container">
+      <ul class="list-group">
+        <li class="list-group-item bookInfo" ng-repeat="book in Books | filter:search_for_book">{{book.name}}, <span>Published in {{book.year}}</span>
+          <div class="controllers">
+            <button type="button" class="btn btn-link">More options</button>
+            <div class="hover-more">
+              <button type="button" class="btn btn-default" ng-click="removeThisOne(book._id)">Rmove</button>
+              <button type="button" class="btn btn-default">More options</button>
+              <button type="button" class="btn btn-default">More options</button>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <script src="controlles/indexCtrl.js"></script>
+  </body>
+</html>

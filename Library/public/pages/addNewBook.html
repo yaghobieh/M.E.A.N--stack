@@ -1,0 +1,13 @@
+<div class="display-addNewBook">
+  <form class="form-inline" ng-submit="newBook()">
+    <label class="sr-only" for="inlineFormInput">Published year</label>
+    <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="Published year" ng-model="newbook.year">
+
+    <label class="sr-only" for="inlineFormInputGroup">Book name</label>
+    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+      <div class="input-group-addon"><span class="glyphicon glyphicon-book"></span></div>
+      <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Book name" ng-model="newbook.name">
+    </div>
+    <button type="submit" class="btn btn-primary">Add new book</button>
+  </form>
+</div>
